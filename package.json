@@ -1,15 +1,23 @@
 {
-  "name": "react-animation-lib",
+  "name": "easy-react-animation",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Just another react animation library",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build-lib": "rollup -c"
   },
-  "author": "",
+  "author": "Easy-Animation",
+  "contributors": [{
+    "name": "Fabio Furtado",
+    "url": "https://github.com/assonif"
+  }, {
+    "name": "Victor Rubino",
+    "url": "https://github.com/rubinoDev"
+  }],
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.18.9",
