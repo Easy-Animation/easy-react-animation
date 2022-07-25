@@ -10,7 +10,7 @@ const INITIAL_POSITION = {
   y: 0
 }
 
-const App = ({ children, depth, shadow, shadowColor, shadowOpacity }) => {
+export const MouseResponse = ({ children, depth, shadow, shadowColor, shadowOpacity }) => {
   const [mouse, setMouse] = useState(INITIAL_POSITION)
   const [origin, setOrigin] = useState(INITIAL_POSITION)
   const [counter, setCounter] = useState(0);
@@ -19,10 +19,6 @@ const App = ({ children, depth, shadow, shadowColor, shadowOpacity }) => {
 
   const containerRef = useRef(null);
   const innerRef = useRef(null);
-
-  useEffect(() => {
-    console.log(hexToRGB(shadowColor))
-  }, [])
 
   useEffect(() => {
     setTransformStyles({
@@ -83,10 +79,8 @@ const App = ({ children, depth, shadow, shadowColor, shadowOpacity }) => {
   )
 }
 
-export default App
 
-
-App.propTypes = {
+MouseResponse.propTypes = {
   children: PropTypes.node.isRequired, 
   depth: PropTypes.oneOf(['low', 'medium', 'high']),
   shadow: PropTypes.bool, 
@@ -94,7 +88,7 @@ App.propTypes = {
   shadowOpacity: PropTypes.number
 }
 
-App.defaultProps = {
+MouseResponse.defaultProps = {
   depth: 'low',
   shadow: false,
   shadowColor: "#000000",

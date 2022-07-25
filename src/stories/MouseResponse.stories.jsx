@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MouseResponse from '../components/MouseResponse';
+import { MouseResponse } from '../index';
 
 export default {
   title: 'Example/MouseResponse',
