@@ -1,12 +1,10 @@
-import e,{useState as o,useRef as t,useEffect as r,useMemo as s,useCallback as n}from"react";import a,{css as d}from"styled-components";import h from"prop-types";const p=e=>{if(7!=e.length)return e;var o=e.substring(1).match(/.{1,2}/g);return[parseInt(o[0],16),parseInt(o[1],16),parseInt(o[2],16)]},i=a.div`
+import e,{useState as t,useRef as o,useEffect as r,useMemo as n,useCallback as s}from"react";import d,{css as i}from"styled-components";const a=d.div`
     perspective: ${({depth:e})=>(e=>{switch(e){case"low":default:return"40px";case"medium":return"20px";case"high":return"10px"}})(e)};
-`,c=a.div`
-    box-shadow: ${({shadow:e,shadowColor:o,shadowOpacity:t})=>e?`2px 2px 50px rgba(${o[0]||0}, ${o[1]||0}, ${o[2]||0}, ${t})`:"none"};
-    
+`,c=d.div`
     transition: transform 400ms;
     
-    ${({x:e,y:o})=>d`
-        transform: rotateX(${e}deg) rotateY(${o}deg);
+    ${({x:e,y:t})=>i`
+        transform: rotateX(${e}deg) rotateY(${t}deg);
     `}
     
-`,f={x:0,y:0},l=({children:a,depth:d,shadow:h,shadowColor:l,shadowOpacity:u})=>{const[w,x]=o(f),[m,y]=o(f),[g,$]=o(0),[v,M]=o(f),O=t(null),b=t(null);r((()=>{M({x:(w.y/b?.current?.offsetHeight/2).toFixed(2),y:(w.x/b?.current?.offsetWidth/2).toFixed(2)})}),[w,b]);const C=s((()=>g%10==0),[g,10]);r((()=>{y({x:O.current.offsetLeft+Math.floor(O.current.offsetWidth/2),y:O.current.offsetTop+Math.floor(O.current.offsetHeight/2)})}),[]);const E=n((e=>{x({x:e.clientX-m.x,y:-1*(e.clientY-m.y)})}),[m]),I=n((e=>{$((e=>e+1)),C&&E(e)}),[C,E,$]),F=n((()=>{M(f)}),[C,E,$]);return e.createElement(i,{ref:O,onMouseMove:I,onMouseEnter:E,onMouseLeave:F,depth:d},e.createElement(c,{ref:b,x:v.x,y:v.y,shadow:h,shadowColor:p(l),shadowOpacity:u},a))};l.propTypes={children:h.node.isRequired,depth:h.oneOf(["low","medium","high"]),shadow:h.bool,shadowColor:h.string,shadowOpacity:h.number},l.defaultProps={depth:"low",shadow:!1,shadowColor:"#000000",shadowOpacity:.2};export{l as MouseResponse};
+`,f={x:0,y:0},l=({children:d,depth:i="low"})=>{const[l,u]=t(f),[p,m]=t(f),[x,v]=t(0),[h,y]=t(f),g=o(document.createElement("div")),M=o(document.createElement("div"));r((()=>{y({x:parseFloat((l.y/M.current.offsetHeight/2).toFixed(2)),y:parseFloat((l.x/M.current.offsetWidth/2).toFixed(2))})}),[l,M]);const E=n((()=>x%10==0),[x,10]);r((()=>{var e,t;m({x:(null===(e=null==g?void 0:g.current)||void 0===e?void 0:e.offsetLeft)+Math.floor(g.current.offsetWidth/2),y:(null===(t=null==g?void 0:g.current)||void 0===t?void 0:t.offsetTop)+Math.floor(g.current.offsetHeight/2)})}),[]);const F=s((e=>{u({x:e.pageX-p.x,y:-1*(e.pageY-p.y)})}),[p]),$=s((e=>{v((e=>e+1)),E&&F(e)}),[E,F,v]),w=s((()=>{y(f)}),[E,F,v]);return e.createElement(a,{ref:g,onMouseMove:$,onMouseEnter:F,onMouseLeave:w,depth:i},e.createElement(c,{ref:M,x:h.x,y:h.y},d))};export{l as MouseResponse};

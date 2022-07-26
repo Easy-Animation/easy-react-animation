@@ -7,15 +7,42 @@ export default {
   component: MouseResponse,
 };
 
-const Template = (args) => (
-    <div style={{display:'flex', justifyContent: "center"}}>
-        <MouseResponse {...args}>
-            <div style={{height: '200px', width: '200px',border:'1px solid black', display:'flex', justifyContent: "center", alignItems: 'center', textAlign: 'center' }}>
-                <h2>Your amazing component here</h2>
+const Template = (args) => {
+    return ( 
+        <div style={{display:'flex', flexWrap: 'wrap', margin: "20%"}}>
+            
+            <div style={{padding: '8px'}}>
+                <MouseResponse shadow {...args}>
+                    <div style={{boxShadow: '2px 2px 15px rgba(0, 0, 0, 0.2)', borderRadius: "0", height: '200px', width: '200px',border:'1px solid black', display:'flex', justifyContent: "center", alignItems: 'center', textAlign: 'center' }}>
+                        <h2>Your amazing component here</h2>
+                    </div>
+                </MouseResponse>
             </div>
-        </MouseResponse>
-    </div>
-)
+            <div style={{padding: '8px'}}>
+                <MouseResponse shadow {...args}>
+                    <div style={{borderRadius: "0", height: '200px', width: '200px',border:'1px solid black', display:'flex', justifyContent: "center", alignItems: 'center', textAlign: 'center' }}>
+                        <h2>Your amazing component here</h2>
+                    </div>
+                </MouseResponse>
+            </div>
+            <div style={{padding: '8px'}}>
+                <MouseResponse {...args} shadow>
+                    <div style={{borderRadius: "0", height: '200px', width: '200px',border:'1px solid black', display:'flex', justifyContent: "center", alignItems: 'center', textAlign: 'center' }}>
+                        <h2>Your amazing component here</h2>
+                    </div>
+                </MouseResponse>
+            </div>
+            <div style={{padding: '8px'}}>
+                <MouseResponse {...args} shadow>
+                    <div style={{borderRadius: "0", height: '200px', width: '200px',border:'1px solid black', display:'flex', justifyContent: "center", alignItems: 'center', textAlign: 'center' }}>
+                        <h2>Your amazing component here</h2>
+                    </div>
+                </MouseResponse>
+            </div>
+           
+        </div>
+    )
+}
 
 
 export const DepthLow = Template.bind({});

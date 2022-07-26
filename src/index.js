@@ -1,2 +1,2 @@
-export * from './components/MouseResponse';
+export * from './components/MouseResponse/index.tsx';
 

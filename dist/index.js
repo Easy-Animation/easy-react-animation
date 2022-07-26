@@ -1,12 +1,10 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("react"),t=require("styled-components"),o=require("prop-types");function r(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}var s=r(e),a=r(t),u=r(o);const d=e=>{if(7!=e.length)return e;var t=e.substring(1).match(/.{1,2}/g);return[parseInt(t[0],16),parseInt(t[1],16),parseInt(t[2],16)]},n=a.default.div`
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("react"),t=require("styled-components");function r(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}var o=r(e),s=r(t);const u=s.default.div`
     perspective: ${({depth:e})=>(e=>{switch(e){case"low":default:return"40px";case"medium":return"20px";case"high":return"10px"}})(e)};
-`,l=a.default.div`
-    box-shadow: ${({shadow:e,shadowColor:t,shadowOpacity:o})=>e?`2px 2px 50px rgba(${t[0]||0}, ${t[1]||0}, ${t[2]||0}, ${o})`:"none"};
-    
+`,a=s.default.div`
     transition: transform 400ms;
     
-    ${({x:e,y:o})=>t.css`
-        transform: rotateX(${e}deg) rotateY(${o}deg);
+    ${({x:e,y:r})=>t.css`
+        transform: rotateX(${e}deg) rotateY(${r}deg);
     `}
     
-`,f={x:0,y:0},c=({children:t,depth:o,shadow:r,shadowColor:a,shadowOpacity:u})=>{const[c,i]=e.useState(f),[h,p]=e.useState(f),[w,x]=e.useState(0),[y,m]=e.useState(f),g=e.useRef(null),b=e.useRef(null);e.useEffect((()=>{m({x:(c.y/b?.current?.offsetHeight/2).toFixed(2),y:(c.x/b?.current?.offsetWidth/2).toFixed(2)})}),[c,b]);const v=e.useMemo((()=>w%10==0),[w,10]);e.useEffect((()=>{p({x:g.current.offsetLeft+Math.floor(g.current.offsetWidth/2),y:g.current.offsetTop+Math.floor(g.current.offsetHeight/2)})}),[]);const M=e.useCallback((e=>{i({x:e.clientX-h.x,y:-1*(e.clientY-h.y)})}),[h]),$=e.useCallback((e=>{x((e=>e+1)),v&&M(e)}),[v,M,x]),C=e.useCallback((()=>{m(f)}),[v,M,x]);return s.default.createElement(n,{ref:g,onMouseMove:$,onMouseEnter:M,onMouseLeave:C,depth:o},s.default.createElement(l,{ref:b,x:y.x,y:y.y,shadow:r,shadowColor:d(a),shadowOpacity:u},t))};c.propTypes={children:u.default.node.isRequired,depth:u.default.oneOf(["low","medium","high"]),shadow:u.default.bool,shadowColor:u.default.string,shadowOpacity:u.default.number},c.defaultProps={depth:"low",shadow:!1,shadowColor:"#000000",shadowOpacity:.2},exports.MouseResponse=c;
+`,n={x:0,y:0};exports.MouseResponse=({children:t,depth:r="low"})=>{const[s,f]=e.useState(n),[l,c]=e.useState(n),[d,i]=e.useState(0),[p,v]=e.useState(n),x=e.useRef(document.createElement("div")),h=e.useRef(document.createElement("div"));e.useEffect((()=>{v({x:parseFloat((s.y/h.current.offsetHeight/2).toFixed(2)),y:parseFloat((s.x/h.current.offsetWidth/2).toFixed(2))})}),[s,h]);const m=e.useMemo((()=>d%10==0),[d,10]);e.useEffect((()=>{var e,t;c({x:(null===(e=null==x?void 0:x.current)||void 0===e?void 0:e.offsetLeft)+Math.floor(x.current.offsetWidth/2),y:(null===(t=null==x?void 0:x.current)||void 0===t?void 0:t.offsetTop)+Math.floor(x.current.offsetHeight/2)})}),[]);const y=e.useCallback((e=>{f({x:e.pageX-l.x,y:-1*(e.pageY-l.y)})}),[l]),M=e.useCallback((e=>{i((e=>e+1)),m&&y(e)}),[m,y,i]),g=e.useCallback((()=>{v(n)}),[m,y,i]);return o.default.createElement(u,{ref:x,onMouseMove:M,onMouseEnter:y,onMouseLeave:g,depth:r},o.default.createElement(a,{ref:h,x:p.x,y:p.y},t))};
