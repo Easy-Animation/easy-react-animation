@@ -1,4 +1,5 @@
 import resolve from '@rollup/plugin-node-resolve';
+import typescript from '@rollup/plugin-typescript';
 import babel from 'rollup-plugin-babel';
 import external from 'rollup-plugin-peer-deps-external';
 import { terser } from 'rollup-plugin-terser';
@@ -17,8 +18,8 @@ export default [
         exports: 'named',
       }
     ],
-    external: ['styled-components', 'prop-types'],
-    globals: { 'styled-components': 'styled', 'prop-types': 'PropTypes' },
+    external: ['styled-components'],
+    globals: { 'styled-components': 'styled', },
     plugins: [
       babel({
         exclude: 'node_modules/**',
@@ -27,6 +28,7 @@ export default [
       external(),
       resolve(),
       terser(),
+      typescript()
     ]
   }
 ];
