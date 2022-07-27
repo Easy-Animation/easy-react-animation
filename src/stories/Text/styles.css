@@ -1,0 +1,7 @@
+.test {
+    color: red;
+    display: flex;
+    flex-wrap: wrap;
+
+    font: 20px 'Roboto', mono-space, sans-serif;
+}

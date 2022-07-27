@@ -2,6 +2,8 @@ import React from "react";
 
 import { Enter } from "../../index.js";
 
+import './styles.css';
+
 export default {
   title: "Example/EnterTextAnimation",
   component: Enter,
@@ -10,7 +12,7 @@ export default {
 const Template = (args) => {
   return (
     <div style={{ display: "flex", flexWrap: "wrap", marginTop: "300vh" }}>
-      <Enter text="testing" styles={{fontWeight: 'bold'}} className="dkshdkjshdjkshkj"></Enter>
+      <Enter text="Tisting" className="test" />
     </div>
   );
 };

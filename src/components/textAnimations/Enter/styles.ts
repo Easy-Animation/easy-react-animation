@@ -24,6 +24,10 @@ export const Char = styled.span<ICharProps>`
   `} */
 `;
 
+// interface IContainerProps {
+//     animationCompleted: boolean;
+// }
+
 export const Container = styled.div`
   > span {
     display: flex;
