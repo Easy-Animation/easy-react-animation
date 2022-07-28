@@ -18,18 +18,6 @@ export const Char = styled.span<ICharProps>`
         opacity: 1;
         transform: translate(0, 0);
     `}
-  
-    /* ${({ charIndex }) => css`
-    
-  `} */
 `;
 
-// interface IContainerProps {
-//     animationCompleted: boolean;
-// }
-
-export const Container = styled.div`
-  > span {
-    display: flex;
-  }
-`;
+export const Container = styled.div``;

@@ -27,19 +27,22 @@ export const Enter = ({ text, styles, className, accessibilityFriendly = false }
 
     return (
         <Container>
-            <span ref={spanRef} className={className}>
-                {(!animationCompleted || (animationCompleted && !accessibilityFriendly)) && text.split("").map((item, index) => (
-                    <Char
-                        isInViewport={isInViewport}
-                        charIndex={index}
-                        key={index}
-                        style={{...styles}}
-                    >
-                        {item !== ' ' ? item : "\u00a0"}
-                    </Char>
-                ))}
-                {animationCompleted && accessibilityFriendly && text}
-            </span>
+            <p>
+                <span ref={spanRef} className={className} aria-label={text}>
+                    {(!animationCompleted || (animationCompleted && !accessibilityFriendly)) && text.split("").map((item, index) => (
+                        <Char
+                            isInViewport={isInViewport}
+                            charIndex={index}
+                            key={index}
+                            style={{...styles}}
+                            aria-hidden="true"
+                        >
+                            {item !== ' ' ? item : "\u00a0"}
+                        </Char>
+                    ))}
+                    {animationCompleted && accessibilityFriendly && text}
+                </span>
+            </p>      
         </Container>
     );
 };

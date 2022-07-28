@@ -12,7 +12,7 @@ export default {
 const Template = (args) => {
   return (
     <div style={{ display: "flex", flexWrap: "wrap", marginTop: "300vh" }}>
-      <Enter text="Tisting" className="test" />
+      <Enter text="Testing 2323" className="test" />
     </div>
   );
 };
