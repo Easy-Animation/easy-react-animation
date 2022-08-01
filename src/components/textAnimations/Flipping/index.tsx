@@ -1,48 +1,21 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import { useIsInViewport } from "../../../hooks/useIsInViewport";
+import React from "react";
 
-import { Char, Container } from "./styles";
+import { css } from "styled-components";
+import BaseComponent from "../BaseComponent";
+import { IAnimationProps } from "../types";
 
-interface IEnterProps {
-  text: string;
-  styles?: any
-  className: string;
-  accessibilityFriendly?: boolean;
-}
+const initialState = css`
+    transform: rotateY(180deg);
+`
 
-export const Flipping = ({ text, styles, className, accessibilityFriendly = false }: IEnterProps) => {
-    const spanRef = useRef(null)
-    const isInViewport = useIsInViewport(spanRef);
-    const [animationCompleted, setAnimationCompleted] = useState(false);
+const animationState = css`
+    transform: rotateY(0deg);
+`
 
-    const animationLength = useMemo(() => 0.5 + (text.length) * 0.1, [text])
-
-    useEffect(() => {
-        if(isInViewport){
-            setTimeout(() => setAnimationCompleted(true), animationLength * 1000)
-        } else {
-            setAnimationCompleted(false)
-        }
-    }, [isInViewport])
-
-    return (
-        <Container>
-            <p>
-                <span ref={spanRef} className={className} aria-label={text}>
-                    {(!animationCompleted || (animationCompleted && !accessibilityFriendly)) && text.split("").map((item, index) => (
-                        <Char
-                            isInViewport={isInViewport}
-                            charIndex={index}
-                            key={index}
-                            style={{...styles}}
-                            aria-hidden="true"
-                        >
-                            {item !== ' ' ? item : "\u00a0"}
-                        </Char>
-                    ))}
-                    {animationCompleted && accessibilityFriendly && text}
-                </span>
-            </p>      
-        </Container>
-    );
-};
+export const Flipping = (props: IAnimationProps) => (
+    <BaseComponent
+        initialState={initialState} 
+        animationState={animationState} 
+        {...props} 
+    />
+)
