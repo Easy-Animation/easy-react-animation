@@ -1,6 +1,6 @@
 {
   "name": "easy-react-animation",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Just another react animation library",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -17,8 +17,8 @@
       "url": "https://github.com/assonif"
     },
     {
-      "name": "Victor Rubino",
-      "url": "https://github.com/rubinoDev"
+        "name": "Victor Rubino",
+        "url": "https://github.com/rubinoDev"
     }
   ],
   "license": "ISC",
