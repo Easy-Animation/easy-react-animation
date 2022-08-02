@@ -1,17 +1,17 @@
 import React from "react";
 
-import { Flipping } from "../../index.js";
+import { Karaoke } from "../../index.js";
 
 import './styles.css';
 
 export default {
-  title: "Example/TextAnimations/Flipping",
-  component: Flipping,
+  title: "Example/TextAnimations/Karaoke",
+  component: Karaoke,
 };
 
 const Template = (args) => {
   return (
-      <Flipping text="Flipping" className="test" />
+      <Karaoke text="Karaoke" className="test" />
   );
 };
 
