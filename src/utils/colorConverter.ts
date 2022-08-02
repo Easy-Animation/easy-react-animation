@@ -1,6 +1,3 @@
-// background-color: #fc9; /* same as #ffcc99 */ 
-
-
 export const hexToRGB = (hex: any) => {
     const hexWithoutHashtag = hex[0] === "#" ? hex.substring(1) : hex;
     let hexFiltered = ''
