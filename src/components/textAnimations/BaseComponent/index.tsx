@@ -34,6 +34,7 @@ const BaseComponent = ({ text, styles, className, animationState, initialState, 
                             isInViewport={isInViewport}
                             charIndex={index}
                             key={index}
+                            char={item}
                             style={{...styles}}
                             initialState={initialState}
                             animationState={animationState} 

@@ -3,4 +3,6 @@ export interface IAnimationProps {
     styles?: any
     className?: string;
     accessibilityFriendly?: boolean;
+    color?: string;
 }
+
