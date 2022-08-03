@@ -6,6 +6,9 @@ interface ICharProps {
   initialState: FlattenSimpleInterpolation;
   animationState: FlattenSimpleInterpolation; 
   char: string;
+  charTotal: number;
+  reverse: boolean;
+  transition: string | null;
 }
 
 export const Char = styled.span<ICharProps>`
@@ -25,12 +28,16 @@ export const Char = styled.span<ICharProps>`
     `
   )}
   
-  ${({ isInViewport,charIndex,animationState, char }) =>
+  ${({ isInViewport,charIndex,animationState, charTotal, reverse, transition }) =>
     isInViewport &&
     css`
         &, &::after, &::before {
             animation-delay: calc(0.25s + ${charIndex} * 0.1s);
             transition: all 0.25s calc(0.25s + ${charIndex} * 0.1s);
+
+            ${transition && `transition: ${transition}`};
+            
+            ${reverse && `transition-delay: calc((${charTotal} - ${charIndex}) * .1s);`};
         }
         ${animationState}
     `}

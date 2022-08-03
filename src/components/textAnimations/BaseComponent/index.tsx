@@ -8,9 +8,20 @@ import { Char, Container } from "./styles";
 interface IBaseComponentProps extends IAnimationProps {
   initialState: FlattenSimpleInterpolation;
   animationState: FlattenSimpleInterpolation; 
+  transition?: string | null;
+  reverse?: boolean;
 }
 
-const BaseComponent = ({ text, styles, className, animationState, initialState, accessibilityFriendly = false }: IBaseComponentProps) => {
+const BaseComponent = ({ 
+    text, 
+    styles, 
+    className, 
+    animationState, 
+    initialState, 
+    accessibilityFriendly = false, 
+    reverse  = false, 
+    transition = null 
+}: IBaseComponentProps) => {
     const spanRef = useRef(null)
     const isInViewport = useIsInViewport(spanRef);
     const [animationCompleted, setAnimationCompleted] = useState(false);
@@ -35,9 +46,12 @@ const BaseComponent = ({ text, styles, className, animationState, initialState, 
                             charIndex={index}
                             key={index}
                             char={item}
+                            charTotal={text.length}
                             style={{...styles}}
                             initialState={initialState}
-                            animationState={animationState} 
+                            animationState={animationState}
+                            reverse={reverse}
+                            transition={transition}
                             aria-hidden="true"
                         >
                             {item !== ' ' ? item : "\u00a0"}
