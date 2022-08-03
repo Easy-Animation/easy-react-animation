@@ -9,7 +9,7 @@ export default {
 
 const Template = (args) => {
     return ( 
-        <div style={{display:'flex', flexWrap: 'wrap', margin: "20%"}}>
+        <div style={{display:'flex', flexWrap: 'wrap'}}>
             
             <div style={{padding: '8px'}}>
                 <MouseResponse shadow {...args}>
@@ -18,27 +18,7 @@ const Template = (args) => {
                     </div>
                 </MouseResponse>
             </div>
-            <div style={{padding: '8px'}}>
-                <MouseResponse shadow {...args}>
-                    <div style={{borderRadius: "0", height: '200px', width: '200px',border:'1px solid black', display:'flex', justifyContent: "center", alignItems: 'center', textAlign: 'center' }}>
-                        <h2>Your amazing component here</h2>
-                    </div>
-                </MouseResponse>
-            </div>
-            <div style={{padding: '8px'}}>
-                <MouseResponse {...args} shadow>
-                    <div style={{borderRadius: "0", height: '200px', width: '200px',border:'1px solid black', display:'flex', justifyContent: "center", alignItems: 'center', textAlign: 'center' }}>
-                        <h2>Your amazing component here</h2>
-                    </div>
-                </MouseResponse>
-            </div>
-            <div style={{padding: '8px'}}>
-                <MouseResponse {...args} shadow>
-                    <div style={{borderRadius: "0", height: '200px', width: '200px',border:'1px solid black', display:'flex', justifyContent: "center", alignItems: 'center', textAlign: 'center' }}>
-                        <h2>Your amazing component here</h2>
-                    </div>
-                </MouseResponse>
-            </div>
+            
            
         </div>
     )
