@@ -49,6 +49,7 @@ import { Flipping } from 'easy-react-animation'
 
 ```
 
+## Usage 
 
 ```js
     <Flipping text="Flipping" className="yourClassName"  style={yourInlineStyle} color="yourColor" accessibilityFriendly=true />
