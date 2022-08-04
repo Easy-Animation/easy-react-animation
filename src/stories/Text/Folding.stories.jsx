@@ -11,7 +11,7 @@ export default {
 
 const Template = (args) => {
   return (
-      <Folding text="Folding" className="test" />
+      <Folding  text="Folding" className="test" />
   );
 };
 

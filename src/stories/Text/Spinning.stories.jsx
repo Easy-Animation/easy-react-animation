@@ -11,7 +11,7 @@ export default {
 
 const Template = (args) => {
   return (
-      <Spinning text="Spinning" className="test" />
+      <Spinning  text="Spinning" className="test" />
   );
 };
 

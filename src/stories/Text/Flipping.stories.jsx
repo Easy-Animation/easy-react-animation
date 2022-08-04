@@ -11,7 +11,7 @@ export default {
 
 const Template = (args) => {
   return (
-      <Flipping text="Flipping" className="test" />
+      <Flipping  text="Flipping" className="test" />
   );
 };
 
