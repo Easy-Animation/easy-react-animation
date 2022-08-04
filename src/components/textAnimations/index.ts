@@ -6,6 +6,7 @@ export * from './Folding';
 export * from './Karaoke';
 export * from './Rolling';
 export * from './Scaling';
+export * from './Slide';
 export * from './Spinning';
 export * from './Turning';
 
