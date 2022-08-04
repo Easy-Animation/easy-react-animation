@@ -46,7 +46,7 @@ export const Char = styled.span<ICharProps>`
 export const Container = styled.div`
     overflow: hidden;
     position: relative;
-    width:auto;
+
     & * {
         display: inline-block;
     }
