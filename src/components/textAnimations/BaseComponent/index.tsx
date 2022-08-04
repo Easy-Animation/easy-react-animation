@@ -7,7 +7,8 @@ import { Char, Container } from "./styles";
 
 interface IBaseComponentProps extends IAnimationProps {
   initialState: FlattenSimpleInterpolation;
-  animationState: FlattenSimpleInterpolation; 
+  animationState: FlattenSimpleInterpolation;
+  containerStyle?: FlattenSimpleInterpolation;
   transition?: string | null;
   reverse?: boolean;
 }
@@ -17,10 +18,11 @@ const BaseComponent = ({
     styles, 
     className, 
     animationState, 
-    initialState, 
+    initialState,
+    containerStyle,
     accessibilityFriendly = false, 
     reverse  = false, 
-    transition = null 
+    transition = null
 }: IBaseComponentProps) => {
     const spanRef = useRef(null)
     const isInViewport = useIsInViewport(spanRef);
@@ -37,7 +39,7 @@ const BaseComponent = ({
     }, [isInViewport])
 
     return (
-        <Container>
+        <Container containerStyle={containerStyle}>
             <p>
                 <span ref={spanRef} className={className} aria-label={text}>
                     {(!animationCompleted || (animationCompleted && !accessibilityFriendly)) && text.split("").map((item, index) => (

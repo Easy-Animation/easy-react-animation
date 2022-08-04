@@ -11,7 +11,9 @@ export default {
 
 const Template = (args) => {
   return (
-      <div style={{display: 'flex', justifyContent: 'center'}}><Block text="Block" className="test" /></div> 
+        <div style={{display: 'flex', justifyContent: 'center'}}>
+            <Block text="Block" className="test" color="#fc9"/>
+        </div> 
   );
 };
 

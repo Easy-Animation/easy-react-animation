@@ -28,7 +28,14 @@ export const Char = styled.span<ICharProps>`
     `
   )}
   
-  ${({ isInViewport,charIndex,animationState, charTotal, reverse, transition }) =>
+  ${({ 
+        isInViewport,
+        charIndex,
+        animationState, 
+        charTotal, 
+        reverse, 
+        transition 
+    }) =>
     isInViewport &&
     css`
         &, &::after, &::before {
@@ -43,39 +50,15 @@ export const Char = styled.span<ICharProps>`
     `}
 `;
 
-export const Container = styled.div`
-    overflow: hidden;
-    position: relative;
+interface IContainerProps {
+    containerStyle: FlattenSimpleInterpolation | undefined;
+}
 
-    & * {
-        display: inline-block;
+export const Container = styled.div<IContainerProps>`    
+    > p {
+        margin: 0;
+        padding: 0;
     }
-    @keyframes block {
-                0%{ 
-                    transform: translate(-110%, 0);
-                }
-                45%, 55%{
-                    transform: translate(0, 0);
-                }
-                100%{
-                    transform: translate(110%, 0);
-                }
-            }
 
-            &::after {
-                color: #000;
-                visibility: visible;
-                clip-path: inset(0 0 0 0);
-                content: '';
-                height: 100%;
-                width: 100%;
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                background: #000;
-                animation: block .5s .25s both;
-
-            }
+    ${({containerStyle}) => containerStyle && containerStyle}
 `;
