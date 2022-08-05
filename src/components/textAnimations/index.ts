@@ -1,4 +1,5 @@
 export * from './Block';
+export * from './Bulge';
 export * from './Enter';
 export * from './Fading';
 export * from './Filling';
