@@ -1,18 +1,18 @@
 import React from "react";
 
-import { Block } from "../../index.js";
+import { Bulge } from "../../index.js";
 
 import './styles.css';
 
 export default {
-  title: "Example/TextAnimations/Block",
-  component: Block,
+  title: "Example/TextAnimations/Bulge",
+  component: Bulge,
 };
 
 const Template = (args) => {
   return (
         <div style={{display: 'flex'}}>
-            <Block text="Block" className="test"/>
+            <Bulge text="Bulge" className="test" />
         </div> 
   );
 };
