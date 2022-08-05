@@ -1,3 +1,4 @@
+export * from './Block';
 export * from './Enter';
 export * from './Fading';
 export * from './Filling';

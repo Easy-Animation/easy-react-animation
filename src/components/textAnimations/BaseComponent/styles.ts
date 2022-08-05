@@ -28,7 +28,14 @@ export const Char = styled.span<ICharProps>`
     `
   )}
   
-  ${({ isInViewport,charIndex,animationState, charTotal, reverse, transition }) =>
+  ${({ 
+        isInViewport,
+        charIndex,
+        animationState, 
+        charTotal, 
+        reverse, 
+        transition 
+    }) =>
     isInViewport &&
     css`
         &, &::after, &::before {
@@ -43,4 +50,15 @@ export const Char = styled.span<ICharProps>`
     `}
 `;
 
-export const Container = styled.div``;
+interface IContainerProps {
+    containerStyle: FlattenSimpleInterpolation | undefined;
+}
+
+export const Container = styled.div<IContainerProps>`    
+    > p {
+        margin: 0;
+        padding: 0;
+    }
+
+    ${({containerStyle}) => containerStyle && containerStyle}
+`;
