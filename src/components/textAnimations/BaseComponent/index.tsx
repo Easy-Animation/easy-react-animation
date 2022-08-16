@@ -6,23 +6,25 @@ import { IAnimationProps } from "../types";
 import { Char, Container } from "./styles";
 
 interface IBaseComponentProps extends IAnimationProps {
-  initialState: FlattenSimpleInterpolation;
-  animationState: FlattenSimpleInterpolation;
-  containerStyle?: FlattenSimpleInterpolation;
-  transition?: string | null;
-  reverse?: boolean;
+    initialState: FlattenSimpleInterpolation;
+    animationState: FlattenSimpleInterpolation;
+    containerStyle?: FlattenSimpleInterpolation;
+    transition?: string | null;
+    reverse?: boolean;
+    customAnimationProps?: ((index: number) => FlattenSimpleInterpolation) | null;
 }
 
-const BaseComponent = ({ 
-    text, 
-    styles, 
-    className, 
-    animationState, 
+const BaseComponent = ({
+    text,
+    styles,
+    className,
+    animationState,
     initialState,
     containerStyle,
-    accessibilityFriendly = false, 
-    reverse  = false, 
-    transition = null
+    accessibilityFriendly = false,
+    reverse = false,
+    transition = null,
+    customAnimationProps = null
 }: IBaseComponentProps) => {
     const spanRef = useRef(null)
     const isInViewport = useIsInViewport(spanRef);
@@ -31,7 +33,7 @@ const BaseComponent = ({
     const animationLength = useMemo(() => 0.5 + (text.length) * 0.1, [text])
 
     useEffect(() => {
-        if(isInViewport){
+        if (isInViewport) {
             setTimeout(() => setAnimationCompleted(true), animationLength * 1000)
         } else {
             setAnimationCompleted(false)
@@ -49,19 +51,20 @@ const BaseComponent = ({
                             key={index}
                             char={item}
                             charTotal={text.length}
-                            style={{...styles}}
+                            style={{ ...styles }}
                             initialState={initialState}
                             animationState={animationState}
                             reverse={reverse}
                             transition={transition}
                             aria-hidden="true"
+                            customAnimationProps={customAnimationProps ? customAnimationProps(index) : null}
                         >
                             {item !== ' ' ? item : "\u00a0"}
                         </Char>
                     ))}
                     {animationCompleted && accessibilityFriendly && text}
                 </span>
-            </p>      
+            </p>
         </Container>
     );
 };

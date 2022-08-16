@@ -4,16 +4,16 @@ import { css } from "styled-components";
 import BaseComponent from "../BaseComponent";
 import { IAnimationProps } from "../types";
 
-export const Bulge = ({color = "#000", ...props}: IAnimationProps) => {
+export const Bulge = ({ color = "#000", ...props }: IAnimationProps) => {
 
-    const initialState = useMemo(() => (
-      css`
+  const initialState = useMemo(() => (
+    css`
           color: ${color}; 
       `
-    ), [color])
+  ), [color])
 
-    const animationState = useMemo(() =>(
-        css`    
+  const animationState = useMemo(() => (
+    css`    
           animation-name: bulge;
           animation-duration: .25s;
 
@@ -23,15 +23,15 @@ export const Bulge = ({color = "#000", ...props}: IAnimationProps) => {
             }
           }
         `
-    ), [])
+  ), [])
 
 
-    return ( 
-        <BaseComponent
-            initialState={initialState}
-            animationState={animationState} 
-            transition={'all 0s 0.5s'}
-            {...props} 
-        />
-    )
+  return (
+    <BaseComponent
+      initialState={initialState}
+      animationState={animationState}
+      transition={'all 0s 0.5s'}
+      {...props}
+    />
+  )
 }
