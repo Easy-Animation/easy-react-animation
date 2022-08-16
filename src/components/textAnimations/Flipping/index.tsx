@@ -5,25 +5,25 @@ import BaseComponent from "../BaseComponent";
 import { IAnimationProps } from "../types";
 
 
-export const Flipping = ({color = "#000", ...props}: IAnimationProps) => {
-    const initialState = useMemo(() => (
-        css`
+export const Flipping = ({ color = "#000", ...props }: IAnimationProps) => {
+  const initialState = useMemo(() => (
+    css`
             color: ${color};
             transform: rotateY(180deg);
         `
-    ), [color]);
+  ), [color]);
 
-    const animationState = useMemo(() => (
-        css`
+  const animationState = useMemo(() => (
+    css`
             transform: rotateY(0deg);
         `
-    ), []);
+  ), []);
 
-    return (
-        <BaseComponent
-            initialState={initialState} 
-            animationState={animationState} 
-            {...props} 
-        />
-    )
+  return (
+    <BaseComponent
+      initialState={initialState}
+      animationState={animationState}
+      {...props}
+    />
+  )
 }
