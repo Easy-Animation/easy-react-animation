@@ -9,5 +9,6 @@ export * from './Karaoke';
 export * from './Rolling';
 export * from './Scaling';
 export * from './Spinning';
+export * from './Tumbling';
 export * from './Turning';
 
