@@ -18,7 +18,6 @@ export const Tumbling = ({color = "#000", ...props}: IAnimationProps) => {
         css`
             opacity: 1;
             transform: translate(0, 0) scale(1) rotate(0deg);
-            transition: transform 1s, opacity 0.2s;
         `
     ), []);
 
@@ -27,7 +26,6 @@ export const Tumbling = ({color = "#000", ...props}: IAnimationProps) => {
             initialState={initialState} 
             animationState={animationState}
             reverse
-            transition={'transform .25s, opacity 0.2s'}
             {...props} 
         />
     )
