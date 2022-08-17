@@ -1,6 +1,7 @@
 export * from './Block';
 export * from './Blowing';
 export * from './Bulge';
+export * from './Conveyor';
 export * from './Enter';
 export * from './Fading';
 export * from './Filling';
