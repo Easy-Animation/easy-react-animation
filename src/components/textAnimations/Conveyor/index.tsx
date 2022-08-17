@@ -43,7 +43,7 @@ export const Conveyor = ({ color = "#000", ...props }: IAnimationProps) => {
     <BaseComponent
       initialState={initialState}
       animationState={animationState}
-      customAnimationProps={(index: number, totalChar: number) => getAnimation(index, totalChar)}
+      customAnimationProps={getAnimation}
       {...props}
     />
   )
