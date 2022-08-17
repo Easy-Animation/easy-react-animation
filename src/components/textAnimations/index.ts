@@ -14,4 +14,5 @@ export * from './Scaling';
 export * from './Spinning';
 export * from './Tumbling';
 export * from './Turning';
+export * from './Zipping';
 
