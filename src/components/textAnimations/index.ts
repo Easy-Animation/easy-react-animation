@@ -8,6 +8,7 @@ export * from './Filling';
 export * from './Flipping';
 export * from './Folding';
 export * from './Karaoke';
+export * from './Perspective';
 export * from './Rolling';
 export * from './Scaling';
 export * from './Spinning';
