@@ -15,6 +15,7 @@ export * from './Rolling';
 export * from './Scaling';
 export * from './Spinning';
 export * from './Swinging';
+export * from './Swapsies';
 export * from './Tumbling';
 export * from './Turning';
 export * from './Zipping';
