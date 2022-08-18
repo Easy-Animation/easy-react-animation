@@ -39,7 +39,7 @@ export const Zipping = ({ color = "#000", ...props }: IAnimationProps) => {
     <BaseComponent
       initialState={initialState}
       animationState={animationState}
-      customAnimationProps={(index: number) => getAnimation(index)}
+      customAnimationProps={getAnimation}
       {...props}
     />
   )
