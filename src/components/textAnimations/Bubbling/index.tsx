@@ -20,7 +20,7 @@ export const Bubbling = ({ color = "#000", ...props }: IAnimationProps) => {
   ), [])
 
   const getAnimation = useCallback((charIndex: number, totalChar: number) => {
-    const random = Math.round(Math.random() * (totalChar - 1) + 1)
+    const random = Math.round(Math.random() * (totalChar - 1) + 1);
 
     return css`
       transition-delay: calc(${random} * .1s);

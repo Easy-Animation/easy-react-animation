@@ -11,6 +11,7 @@ export * from './Folding';
 export * from './Karaoke';
 export * from './Meeting';
 export * from './Perspective';
+export * from './Random';
 export * from './Rolling';
 export * from './Scaling';
 export * from './Spinning';

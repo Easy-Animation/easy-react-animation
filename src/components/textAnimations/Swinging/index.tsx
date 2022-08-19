@@ -29,15 +29,6 @@ export const Swinging = ({ color = "#000", ...props }: IAnimationProps) => {
             `
   ), [])
 
-  // &--swinging
-  //   .char
-  //     transform-origin calc((${totalChar} - var(--char-index)) * 100%) -100%
-  //     transition-delay calc((${totalChar} - var(--char-index)) * .1s)
-
-  //   [data-scroll='out'] .char
-  //     opacity 0
-  //     transform rotate(90deg)
-
   return (
     <BaseComponent
       initialState={initialState}
