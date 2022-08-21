@@ -83,12 +83,14 @@ To apply your text color (RGB or hex)
 To make it readable to screen readers
 
 
-
-
 ## Animations
 
 Below is a list of all available animations <br><br>
 `MouseResponse`<br>
+`Block`<br>
+`Blowing`<br>
+`Bulge`<br>
+`Conveyor`<br>
 `Enter`<br>
 `Fading`<br>
 `Filling`<br>
@@ -98,4 +100,6 @@ Below is a list of all available animations <br><br>
 `Rolling`<br>
 `Scaling`<br>
 `Spinning`<br>
+`Tumbling`<br>
+`Turning`<br>
 
